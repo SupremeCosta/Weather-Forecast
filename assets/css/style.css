@@ -1,0 +1,66 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+header {
+	background-color: #336699;
+	color: white;
+	padding: 20px;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 20px;
+}
+
+section {
+	flex-basis: 100%;
+	margin-bottom: 20px;
+}
+
+aside {
+	flex-basis: 25%;
+	margin-left: 20px;
+}
+
+form {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+label {
+	flex-basis: 25%;
+	margin-right: 20px;
+}
+
+input[type="text"] {
+	flex-basis: 50%;
+	padding: 5px;
+}
+
+button {
+	padding: 5px 10px;
+	background-color: #336699;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+#current-icon img {
+	height: 100px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	margin-bottom: 5px;
+	cursor: pointer;
+}
