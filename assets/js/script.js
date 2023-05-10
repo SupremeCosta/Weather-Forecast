@@ -21,7 +21,7 @@ function displayCurrentWeather(city, date, icon, temperature, humidity, windSpee
 }
 
 // Function to display forecast
-function displayForecast(forecastData) {
+function displayForecast(forecastData, city) {
   const forecast = document.getElementById('forecast');
   forecast.innerHTML = '';
   forecastData.forEach((forecastItem) => {
@@ -29,11 +29,12 @@ function displayForecast(forecastData) {
     const forecastItemElement = document.createElement('div');
     forecastItemElement.classList.add('forecast-item');
     forecastItemElement.innerHTML = `
-      <p>Date: ${date}</p>
-      <img src="http://openweathermap.org/img/w/${icon}.png" alt="Weather Icon">
-      <p>Temperature: ${temperature}</p>
-      <p>Humidity: ${humidity}</p>
-      <p>Wind Speed: ${windSpeed}</p>
+        <p>City: ${city}</p>
+        <p>Date: ${date}</p>
+        <img src="http://openweathermap.org/img/w/${icon}.png" alt="Weather Icon">
+        <p>Temperature: ${temperature}</p>
+        <p>Humidity: ${humidity}</p>
+        <p>Wind Speed: ${windSpeed}</p>
     `;
     forecast.appendChild(forecastItemElement);
   });
@@ -79,9 +80,10 @@ function handleFormSubmit(event) {
 function addToSearchHistory(city) {
   const searchHistory = document.getElementById('searchHistory');
   const cityElement = document.createElement('button');
-  cityElement.textContent = city;
-  cityElement.addEventListener('click', () => {
-    cityInput.value = city;
+  cityElement.textContent = city.name;
+  cityElement.addEventListener('click', (event) => {
+    const clickedCity = event.target.textContent;
+    cityInput.value = clickedCity;
     handleFormSubmit(event);
   });
   searchHistory.appendChild(cityElement);

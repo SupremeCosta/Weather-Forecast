@@ -40,13 +40,17 @@
   #searchHistory {
     margin-bottom: 20px;
   }
+
+  #searchHistory button {
+    background-color: grey;
+  }
   
   #weatherSection {
     margin-left: 35%;
   }
   
   h2 {
-    margin-top: 20px;
+    margin-top: -10px;
   }
   
   #forecast {
