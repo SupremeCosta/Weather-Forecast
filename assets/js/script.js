@@ -35,25 +35,26 @@ function displayForecast(forecastData) {
   // Get the current date
   const currentDate = new Date();
   forecastData.forEach((forecastItem, index) => {
-    const { icon, temperature, humidity, windSpeed } = forecastItem;
-    
     // Calculate the date for the forecast item
     const date = new Date();
-    date.setDate(currentDate.getDate() + index + 1); // Add the number of days to the current date
+    date.setDate(currentDate.getDate() + index + 1); 
 
-    const formattedDate = dayjs(date).format('MM/DD/YYYY');
-    const temperatureFahrenheit = Math.round((temperature - 273.15) * 9 / 5 + 32); // Convert temperature to Fahrenheit
+    if (index < 5) {
+      const { icon, temperature, humidity, windSpeed } = forecastItem;
+      const formattedDate = dayjs(date).format('MM/DD/YYYY');
+      const temperatureFahrenheit = Math.round((temperature - 273.15) * 9 / 5 + 32);
 
-    const forecastItemElement = document.createElement('div');
-    forecastItemElement.classList.add('forecast-item');
-    forecastItemElement.innerHTML = `
-      <p>Date: ${formattedDate}</p>
-      <img src="http://openweathermap.org/img/w/${icon}.png" alt="Weather Icon">
-      <p>Temperature: ${temperatureFahrenheit} °F</p>
-      <p>Humidity: ${humidity}</p>
-      <p>Wind Speed: ${windSpeed}</p>
-    `;
-    forecast.appendChild(forecastItemElement);
+      const forecastItemElement = document.createElement('div');
+      forecastItemElement.classList.add('forecast-item');
+      forecastItemElement.innerHTML = `
+        <p>Date: ${formattedDate}</p>
+        <img src="http://openweathermap.org/img/w/${icon}.png" alt="Weather Icon">
+        <p>Temperature: ${temperatureFahrenheit} °F</p>
+        <p>Humidity: ${humidity}</p>
+        <p>Wind Speed: ${windSpeed}</p>
+      `;
+      forecast.appendChild(forecastItemElement);
+    }
   });
 }
 
