@@ -21,7 +21,7 @@ function displayCurrentWeather(city, date, icon, temperature, humidity, windSpee
   const formattedDate = dayjs(date).format('M/DD/YYYY');
   const temperatureFahrenheit = Math.round((temperature - 273.15) * 9 / 5 + 32);
   currentWeather.innerHTML = `
-    <h2>${city} (${formattedDate}) <img src="http://openweathermap.org/img/w/${icon}.png" alt="Weather Icon"></h2>
+    <h2>${city.name} (${formattedDate}) <img src="http://openweathermap.org/img/w/${icon}.png" alt="Weather Icon"></h2>
     <p>Temp: ${temperatureFahrenheit} °F</p>
     <p>Wind: ${windSpeed} MPH</p>
     <p>Humidity: ${humidity}%</p>

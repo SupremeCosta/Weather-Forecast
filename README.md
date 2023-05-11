@@ -12,6 +12,7 @@
 
   <h2 id="description">Description</h2>
   <p>The Weather forecast is a web application that allows users to search for weather conditions of a specific city and view the current weather and 5-day forecast. Users can also see their search history, which is saved locally.</p>
+  <p>https://supremecosta.github.io/Weather-Forecast/</p>
 
   <h2 id="usage">Usage</h2>
   <p>Enter the name of a city in the search bar and click the "Search" button. The current weather conditions for the searched city will be displayed, including the city name, date, weather icon, temperature, wind speed, and humidity. Below the current weather, the 5-day forecast will show the date, weather icon, temperature, wind speed, and humidity for each day. To view the weather details of a previously searched city, click on the city name in the search history.</p>
