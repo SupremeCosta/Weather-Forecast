@@ -67,8 +67,8 @@ function handleFormSubmit(event) {
     getWeatherData(city)
       .then((data) => {
         const { city, list } = data;
-        const currentWeather = list[0];
-        const forecast = list.slice(1);
+        const currentWeather = list.find((item) => item.dt_txt.includes('12:00:00'));
+        const forecast = list.filter((item) => !item.dt_txt.includes('12:00:00'));
         const date = currentWeather.dt_txt;
         const icon = currentWeather.weather[0].icon;
         const temperature = currentWeather.main.temp;
@@ -136,8 +136,8 @@ function handleSearchHistoryClick(city) {
     getWeatherData(city)
       .then((data) => {
         const { city, list } = data;
-        const currentWeather = list[0];
-        const forecast = list.slice(1);
+        const currentWeather = list.find((item) => item.dt_txt.includes('12:00:00'));
+        const forecast = list.filter((item) => !item.dt_txt.includes('12:00:00'));
         const date = currentWeather.dt_txt;
         const icon = currentWeather.weather[0].icon;
         const temperature = currentWeather.main.temp;
